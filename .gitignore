@@ -25,4 +25,10 @@ yarn-error.log*
 
 # OS
 .DS_Store
-Thumbs.db 
+Thumbs.db
+
+# Next.js
+.next/
+frontend/.next/
+frontend/out/
+frontend/build/ 
