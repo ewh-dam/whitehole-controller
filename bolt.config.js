@@ -5,22 +5,24 @@ module.exports = {
   main: 'backend/index.js',
   scripts: {
     'start': 'node backend/index.js',
-    'dev': 'nodemon backend/index.js',
+    'dev': 'concurrently \"cd backend && npm run dev\" \"cd frontend && npm run dev\"',
     'test': 'echo \"Error: no test specified\" && exit 1'
   },
   dependencies: {
     'express': '^4.21.2'
   },
   devDependencies: {
-    'nodemon': '^3.0.3'
+    'nodemon': '^3.0.3',
+    'concurrently': '^8.2.2'
   },
   bolt: {
     port: 3000,
     watch: ['backend/**/*.js', 'frontend/**/*'],
-    ignore: ['node_modules', 'logs', 'dist'],
+    ignore: ['node_modules', 'logs', 'dist', '.next'],
     env: {
       NODE_ENV: 'development',
-      PORT: 3000
+      PORT: 3000,
+      NEXT_PUBLIC_API_URL: 'http://localhost:3000'
     },
     debug: {
       port: 9229,
@@ -28,7 +30,7 @@ module.exports = {
     },
     terminal: {
       shell: '/bin/bash',
-      cwd: 'backend'
+      cwd: 'frontend'
     },
     editor: {
       theme: 'dark',
