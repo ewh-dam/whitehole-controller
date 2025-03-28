@@ -40,7 +40,11 @@ module.exports = {
     },
     git: {
       autoCommit: true,
-      commitMessage: 'Auto-commit from Bolt.new'
+      commitMessage: 'Auto-commit from Bolt.new',
+      remote: 'https://github.com/ewh-dam/whitehole-controller.git',
+      branch: 'master',
+      pushOnCommit: true,
+      pullBeforePush: true
     }
   }
 }; 
