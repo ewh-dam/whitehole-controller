@@ -1,34 +1,36 @@
-import { Box, Container, Typography, AppBar, Toolbar, Button } from '@mui/material';
-import { useState, useEffect } from 'react';
+import { Container, Typography, Grid, Paper } from '@mui/material';
+import Layout from '../components/Layout';
 
 export default function Home() {
-  const [status, setStatus] = useState('Loading...');
-
-  useEffect(() => {
-    fetch('http://localhost:3000')
-      .then(res => res.text())
-      .then(data => setStatus(data))
-      .catch(err => setStatus('Error connecting to backend'));
-  }, []);
-
   return (
-    <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
-        <Toolbar>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            Whitehole Controller
-          </Typography>
-          <Button color="inherit">Login</Button>
-        </Toolbar>
-      </AppBar>
-      <Container maxWidth="lg" sx={{ mt: 4 }}>
-        <Typography variant="h4" component="h1" gutterBottom>
+    <Layout>
+      <Container maxWidth="lg">
+        <Typography variant="h4" gutterBottom>
           Welcome to Whitehole Controller
         </Typography>
-        <Typography variant="body1" gutterBottom>
-          Backend Status: {status}
-        </Typography>
+        <Grid container spacing={3}>
+          <Grid item xs={12} md={6}>
+            <Paper sx={{ p: 3 }}>
+              <Typography variant="h6" gutterBottom>
+                System Status
+              </Typography>
+              <Typography>
+                All systems operational
+              </Typography>
+            </Paper>
+          </Grid>
+          <Grid item xs={12} md={6}>
+            <Paper sx={{ p: 3 }}>
+              <Typography variant="h6" gutterBottom>
+                Quick Actions
+              </Typography>
+              <Typography>
+                Access your dashboard or settings to get started
+              </Typography>
+            </Paper>
+          </Grid>
+        </Grid>
       </Container>
-    </Box>
+    </Layout>
   );
 } 
