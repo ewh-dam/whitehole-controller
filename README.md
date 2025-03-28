@@ -39,6 +39,19 @@
 
 Il server sarà disponibile su http://localhost:3000
 
+### Sviluppo con Bolt.new
+
+1. Apri il progetto su [Bolt.new](https://bolt.new)
+2. Importa il repository: `https://github.com/ewh-dam/whitehole-controller`
+3. Il progetto si avvierà automaticamente con la configurazione di sviluppo
+
+Vantaggi di Bolt.new:
+- Hot reload automatico
+- Debug integrato
+- Terminale integrato
+- Gestione delle dipendenze semplificata
+- Integrazione con GitHub
+
 ### Frontend
 
 La configurazione del frontend verrà aggiunta in seguito.
