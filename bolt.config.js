@@ -16,10 +16,29 @@ module.exports = {
   },
   bolt: {
     port: 3000,
-    watch: ['backend/**/*.js'],
+    watch: ['backend/**/*.js', 'frontend/**/*'],
     ignore: ['node_modules', 'logs', 'dist'],
     env: {
-      NODE_ENV: 'development'
+      NODE_ENV: 'development',
+      PORT: 3000
+    },
+    debug: {
+      port: 9229,
+      sourceMaps: true
+    },
+    terminal: {
+      shell: '/bin/bash',
+      cwd: 'backend'
+    },
+    editor: {
+      theme: 'dark',
+      fontSize: 14,
+      tabSize: 2,
+      wordWrap: 'on'
+    },
+    git: {
+      autoCommit: true,
+      commitMessage: 'Auto-commit from Bolt.new'
     }
   }
 }; 
